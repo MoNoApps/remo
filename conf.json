@@ -1,0 +1,19 @@
+{
+  "queue":{
+    "input": "db:mongo:input",
+    "output": "db:mongo:input",
+    "errors": "db:mongo:errors"
+  },
+  "defaults": {
+    "doc": {},
+    "query": {},
+    "project": {},
+    "index": "_id",
+    "limit": 10,
+    "options": {"w": 1},
+    "sort": {"_id": 1},
+    "concern": {"w": 1},
+    "collection": "remo",
+    "url": "mongodb://127.0.0.1/remo"
+  }
+}
