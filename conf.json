@@ -1,5 +1,8 @@
 {
+  "sleep": 1000,
   "queue":{
+    "size": 10,
+    "wait": 10,
     "input": "db:mongo:input",
     "output": "db:mongo:input",
     "errors": "db:mongo:errors"

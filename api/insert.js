@@ -1,6 +1,6 @@
 var insert = function(props) {
   this.connect(this.merge( this.props, props ), function(com) {
-    if(!com.db){
+    if(!com.db) {
       com.err = 'No db object found'; 
       return com.cb(com);
     }
