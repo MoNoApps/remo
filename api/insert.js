@@ -1,7 +1,14 @@
 var insert = function(props) {
-  this.connect(this.merge( this.props, props ), function(com) {
+  this.connect( this.merge ( this.props, props ), function(com) {
+    if(!com){
+      return console.log('Com not found.');
+    }
+
     if(!com.db) {
-      com.err = 'No db object found'; 
+      com.err = 'No db object found';
+      if(!com.cb){
+        return console.log('Callback not found.');
+      }
       return com.cb(com);
     }
     var col = com.db.collection(com.collection);
@@ -15,4 +22,3 @@ var insert = function(props) {
 };
 
 module.exports = insert;
-
