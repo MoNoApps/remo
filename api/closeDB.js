@@ -1,6 +1,6 @@
 var closeDB = function(com) {
   com.db.close();
-  com.cb(err, 'Connection closed');
+  com.cb(com.err, 'Connection closed');
 };
 
 module.exports = closeDB;

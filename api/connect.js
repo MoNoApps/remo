@@ -1,7 +1,7 @@
 var connect = function(com, next) {
   com.stime = new Date().getTime();
   var client = require('mongodb').MongoClient;
-  if(!com){ return console.log('Com not found.') }
+  if(!com){ return console.log('Com not found.'); }
   if(com.db){
     return next(com);
   }else{

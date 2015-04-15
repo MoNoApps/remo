@@ -2,8 +2,10 @@
   * Rewrite old properties with new ones.
   */
 var merge = function(props, newProps) {
-  for(var k in newProps) {
-    props[k] = newProps[k];
+  for(var p in newProps) {
+    if (newProps.hasOwnProperty(p)) {
+      props[p] = newProps[p];
+    }
   }
   return props;
 };

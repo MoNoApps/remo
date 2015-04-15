@@ -2,9 +2,9 @@ var gulp   = require('gulp');
 var jshint = require('gulp-jshint');
 
 var scripts = [
-'./index.js',
+'./*.js',
 './api/*.js',
-'./sv/*.js'
+'./lib/*.js'
 ];
 
 gulp.task('lint', function() {
