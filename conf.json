@@ -5,7 +5,7 @@
     "wait": 0,
     "input": "db:mongo:input",
     "retry": "db:mongo:retry",
-    "output": "db:mongo:input",
+    "output": "db:mongo:output",
     "errors": "db:mongo:errors",
     "results": "db:mongo:results"
   },
