@@ -1,12 +1,13 @@
 {
   "sleep": 1000,
   "queue":{
-    "size": 10000,
+    "size": 1000,
     "wait": 0,
     "input": "db:mongo:input",
+    "retry": "db:mongo:retry",
     "output": "db:mongo:input",
     "errors": "db:mongo:errors",
-    "retry": "db:mongo:retry"
+    "results": "db:mongo:results"
   },
   "defaults": {
     "doc": {},

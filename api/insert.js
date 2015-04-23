@@ -1,9 +1,7 @@
-var insert = function(com) {
-  var col = com.db.collection(com.collection);
-  col.insert(com.doc, function(err, results) {
-    com.err = err || false;
-    com.results = results || false;
-    com.cb(com);
+var insert = function(db, message, cb) {
+  var col = db.collection(message.collection);
+  col.insert(message.doc, function(err, results) {
+    cb(err, results);
   });
 };
 
