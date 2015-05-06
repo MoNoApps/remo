@@ -1,5 +1,5 @@
 # ReMo
-Redis and Mongo for async and slow servers.
+Redis and Mongo for async tasks or slow servers.
 
 ## Metrics
 [![Code Climate](https://codeclimate.com/github/MoNoApps/remo/badges/gpa.svg)](https://codeclimate.com/github/MoNoApps/remo) [![Test Coverage](https://codeclimate.com/github/MoNoApps/remo/badges/coverage.svg)](https://codeclimate.com/github/MoNoApps/remo)
@@ -50,6 +50,71 @@ mongo.connect(conf.defaults.url, function(err, db) {
 
 ````
 
+## Learn By Example
+Run your mongod v3 service
+````sh
+mongod --directoryperdb --storageEngine wiredTiger
+````
+
+Clean redis
+````sh
+redis-cli
+127.0.0.1:6379>FLUSHALL
+````
+
+Flood redis
+````sh
+node lib/fill.js
+#done!
+````
+
+Count input queries
+````sh
+redis-cli
+127.0.0.1:6379>LLEN "db:mongo:input"
+(integer) 100000
+````
+
+Open your monitor
+````sh
+redis-cli monitor
+````
+
+From redis to mongodb listening for changes
+````sh
+node lib/init.js
+````
+
+Play with times
+````js
+#conf.json
+{
+"sleep": 1000,  # Listen for changes every second
+"queue":{
+  "size": 1000, # Slice whole process into blocks of 1000 queries
+  "wait": 0,    # Time between each query
+...
+}
+````
+
+Flood redis again and see monitor
+````sh
+node lib/fill.js
+#done!
+````
+````sh
+{ rss: 81006592, heapTotal: 61790464, heapUsed: 38060592 }
+Attempt with  1000  queries on  1430927005463
+````
+Mesure of processed queries
+````sh
+127.0.0.1:6379> LLEN "db:mongo:results"
+(integer) 100000
+127.0.0.1:6379> LRANGE "db:mongo:results" 0 1
+1) "{\"ok\":1,\"n\":1}"
+2) "{\"ok\":1,\"n\":1}"
+````
+
 ## Redis List Expected Message
 
 Save your messages on redis
@@ -71,7 +136,7 @@ pub.rpush(['db:mongo:input', JSON.stringify(message)], function(){});
 * Count pending queries
 * Open a connection with mongo
 * Process a block of queries
-* Save
+* Save on disk
 * Close the mongo connection
 
 ## Test
@@ -82,10 +147,10 @@ npm install gulp-jshint
 gulp
 ````
 
-## Ideas
+## ToDo
 * Remove code complexity.
 * Separate by function. [OK]
 * Export all in one file. [OK]
-* Add inc, set, unset, upsert functions.
+* Add inc, set, unset, upsert functions. [Ok]
 * Use lower case for naming. [OK]
 * Remove prototype functions. [OK]
