@@ -20,8 +20,8 @@ remo.updateByObjectId = require('./api/updateByObjectId');
 remo.removeByObjectId = require('./api/removeByObjectId');
 //--- math functions ---//
 remo.inc = require('./api/inc');
-remo.set = require('./api/set');
 //--- object functions ---//
+remo.set = require('./api/set');
 remo.unset = require('./api/unset');
 remo.upsert = require('./api/upsert');
 //--- helpers ---//

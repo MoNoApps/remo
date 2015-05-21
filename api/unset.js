@@ -1,7 +1,7 @@
-var unset = function(props) {
-  this.props.doc = {$unset: {}};
-  this.props.doc.$unset[props.key] = 1;
-  this.update(this.merge( this.props, props ));
-};
+var update = require('./update');
 
+var unset = function(db, message, cb) {
+  message.doc = {$unset: message.doc};
+  update(db, message, cb);
+};
 module.exports = unset;
