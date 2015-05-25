@@ -1,7 +1,8 @@
-var inc = function(props) {
-  this.props.doc = {$inc: {}};
-  this.props.doc.$inc[props.key] = props.qty;
-  this.update(this.merge( this.props, props ));
+var update = require('./update');
+
+var inc = function(db, message, cb) {
+  message.doc = {$inc: message.inc};
+  update(db, message, cb);
 };
 
 module.exports = inc;

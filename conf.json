@@ -10,6 +10,7 @@
     "results": "db:mongo:results"
   },
   "defaults": {
+    "inc": 1,
     "doc": {},
     "query": {},
     "project": {},
