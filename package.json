@@ -1,6 +1,6 @@
 {
   "name": "remo",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Re[dis]Mo[ngo] queue manager",
   "main": "index.js",
   "scripts": {
