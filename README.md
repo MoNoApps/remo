@@ -16,7 +16,7 @@ Configure your queues:
 # conf.json
 "input"  : "db:mongo:input"   # All input queries
 "retry"  : "db:mongo:retry"   # Queries not processed
-"output" : "db:mongo:output"  # Output from mongo[unused]
+"output" : "db:mongo:output"  # Output for 'find'
 "errors" : "db:mongo:errors"  # Logging errors
 "results": "db:mongo:results" # Logging results
 ````
@@ -132,14 +132,14 @@ pub.rpush(['db:mongo:input', JSON.stringify(message)], function(){});
 ## Workflow
 * Send JSON http request.
 * Save JSON in redis.
-* Listen for changes node/ruby
+* Listening for changes node/ruby
 * Count pending queries
 * Open a connection with mongo
 * Process a block of queries
 * Save on disk
 * Close the mongo connection
 
-## Test
+## Code Quality
 ````sh
 npm install gulp
 npm install gulp-jshint
