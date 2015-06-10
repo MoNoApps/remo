@@ -1,15 +1,18 @@
 var connect = function(com, next) {
-  com.stime = new Date().getTime();
-  var client = require('mongodb').MongoClient;
-  if(!com){ return console.log('Com not found.'); }
-  if(com.db){
-    return next(com);
-  }else{
-    client.connect(com.url, function(err, db) {
-      com.err = err;
-      com.db = db || false;
+  console.log(com);
+  if(!com) { return console.log('Missing com object.'); }
+  if(!com.url) { return console.log('Missing db url.'); }
 
-      next(com);
+  if(com.db) {
+    next(com);
+  } else {
+    var stime = new Date().getTime();
+    var merge = require('../api/merge');
+    var client = require('mongodb').MongoClient;
+
+    client.connect(com.url, function(err, db) {
+      console.log('stime: ', stime);
+      next(merge(com, {err: err, db: db, stime: stime}));
     });
   }
 };

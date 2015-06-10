@@ -14,10 +14,11 @@
     "doc": {},
     "query": {},
     "project": {},
-    "index": "_id",
     "limit": 10,
-    "options": {"w": 1},
+    "index": "_id",
     "sort": {"_id": 1},
+    "pooling": false,
+    "options": {"w": 1},
     "concern": {"w": 1},
     "collection": "remo",
     "url": "mongodb://127.0.0.1/remo"
