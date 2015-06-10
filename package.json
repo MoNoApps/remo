@@ -21,10 +21,11 @@
     "async",
     "delay",
     "dinam",
-    "alive"
+    "alive",
+    "stats"
   ],
   "dependencies": {
-    "mongodb": "^2.0.25",
+    "mongodb": "^2.0.33",
     "redis": "^0.12.1"
   },
   "author": "Daniel Martinez",

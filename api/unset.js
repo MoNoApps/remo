@@ -1,7 +1,6 @@
-var update = require('./update');
+var update = require('../api/update');
 
-var unset = function(db, message, cb) {
+module.exports = function(db, message, cb) {
   message.doc = {$unset: message.doc};
   update(db, message, cb);
 };
-module.exports = unset;

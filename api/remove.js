@@ -1,11 +1,8 @@
-var remove = function(props) {
-  this.connect(this.merge( this.props, props ), function(com){
-    var col = com.db.collection(com.collection);
-    col.remove(com.query, function(err, results) {
-      com.db.close();
-      com.cb(err, results);
-    });
-  });
+module.exports = function(db, message, cb) {
+  var col = db.collection(message.collection);
+  col.remove(message.query,
+    function(err, results) {
+      cb(err, results);
+    }
+  );
 };
-
-module.exports = remove;

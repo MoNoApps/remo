@@ -1,16 +1,14 @@
-var commons = {
+module.export = {
   "inc": 1,
   "doc": {},
   "query": {},
   "project": {},
-  "index": "_id",
   "limit": 10,
-  "options": {"w": 1},
+  "index": "_id",
+  "pooling": false,
   "sort": {"_id": 1},
-  "concern": {"w": 1},
+  "options": {"w": 1},
   "collection": "remo",
   "url": "mongodb://127.0.0.1/remo",
   "cb": require('./response')
 };
-
-module.export = commons;

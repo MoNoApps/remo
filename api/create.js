@@ -1,10 +1,7 @@
-var create = function(props) {
-  this.connect(this.merge( this.props, props ), function(com){
-    com.db.createCollection(com.collection, function(err, collection) {
-      com.db.close();
-      com.cb(err, collection);
-    });
-  });
+module.exports = function(db, message, cb) {
+  db.createCollection(message.collection,
+    function(err, results) {
+      cb(err, results);
+    }
+  );
 };
-
-module.exports = create;

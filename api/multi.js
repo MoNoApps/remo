@@ -1,6 +1,6 @@
-var multi = function(props) {
-  this.props.options.multi = true;
-  this.update(this.merge( this.props, props ));
-};
+var update = require('../api/update');
 
-module.exports = multi;
+module.exports = function(db, message, cb) {
+  message.options.multi = true;
+  update(db, message, cb);
+};

@@ -1,8 +1,6 @@
-var update = require('./update');
+var update = require('../api/update');
 
-var inc = function(db, message, cb) {
-  message.doc = {$inc: message.inc};
+module.exports = function(db, message, cb) {
+  message.doc = {$inc: message.doc};
   update(db, message, cb);
 };
-
-module.exports = inc;
