@@ -1,4 +1,5 @@
 var remo = require('../index');
+var assert = require("assert");
 
 describe('remo', function(){
 
