@@ -1,7 +1,6 @@
-var upsert = function(props) {
-  this.options = { upsert: true };
-  this.props.doc.$unset[props.key] = 1;
-  this.update(this.merge( this.props, props ));
-};
+var update = require('../api/update');
 
-module.exports = upsert;
+module.exports = function(db, message, cb) {
+  message.options.upsert = true;
+  update(db, message, cb);
+};

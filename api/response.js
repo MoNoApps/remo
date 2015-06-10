@@ -1,4 +1,4 @@
-var response = function(com) {
+module.exports = function(com) {
   if(com && !com.pooling) {
     if(com.db) {
       com.etime = new Date().getTime();
@@ -7,5 +7,3 @@ var response = function(com) {
     }
   }
 };
-
-module.exports = response;

@@ -8,8 +8,7 @@ module.export = {
   "pooling": false,
   "sort": {"_id": 1},
   "options": {"w": 1},
-  "concern": {"w": 1},
   "collection": "remo",
   "url": "mongodb://127.0.0.1/remo",
-  "db": require('./response')
+  "cb": require('./response')
 };

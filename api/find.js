@@ -1,4 +1,4 @@
-var find = function(db, message, cb) {
+module.exports = function(db, message, cb) {
   var col = db.collection(message.collection);
   col.find(message.query, message.project, message.options)
      .limit(message.limit)
@@ -7,5 +7,3 @@ var find = function(db, message, cb) {
        cb(err, results);
   });
 };
-
-module.exports = find;

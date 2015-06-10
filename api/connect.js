@@ -1,5 +1,4 @@
 var connect = function(com, next) {
-  console.log(com);
   if(!com) { return console.log('Missing com object.'); }
   if(!com.url) { return console.log('Missing db url.'); }
 
@@ -11,7 +10,6 @@ var connect = function(com, next) {
     var client = require('mongodb').MongoClient;
 
     client.connect(com.url, function(err, db) {
-      console.log('stime: ', stime);
       next(merge(com, {err: err, db: db, stime: stime}));
     });
   }

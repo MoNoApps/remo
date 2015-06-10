@@ -19,7 +19,6 @@
     "sort": {"_id": 1},
     "pooling": false,
     "options": {"w": 1},
-    "concern": {"w": 1},
     "collection": "remo",
     "url": "mongodb://127.0.0.1/remo"
   }

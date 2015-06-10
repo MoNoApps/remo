@@ -1,14 +1,11 @@
-var parseOId = require('./parseOId');
+var parseOId = require('../api/parseOId');
 
-var findByObjectId = function(props) {
-  this.connect(this.merge( this.props, props ), function(com) {
-    com.query[com.index] = parseOId(com.query[com.index]);
-    var col = com.db.collection(com.collection);
-    col.findOne(com.query, function(err, results) {
-      com.db.close();
-      com.cb(err, results);
-    });
-  });
+module.exports = function(db, message, cb) {
+  var col = db.collection(message.collection);
+  message.query[message.index] = parseOId(message.query[message.index]);
+  col.findOne(message.query,
+    function(err, results) {
+      cb(err, results);
+    }
+  );
 };
-
-module.exports = findByObjectId;
