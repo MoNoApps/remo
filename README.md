@@ -147,10 +147,3 @@ npm install gulp-jshint
 gulp
 ````
 
-## ToDo
-* Remove code complexity.
-* Separate by function. [OK]
-* Export all in one file. [OK]
-* Add inc, set, unset, upsert functions. [Ok]
-* Use lower case for naming. [OK]
-* Remove prototype functions. [OK]
