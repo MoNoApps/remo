@@ -1,3 +1,5 @@
 module.exports = function(db, cb) {
-  db.close(cb);
+  try{ db.close(cb); }
+  catch(e){ cb(e);}
+
 };
