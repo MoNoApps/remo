@@ -3,7 +3,7 @@ var pool = require('../api/pool');
 
 describe('remo lib', function(){
 
-  it('unknow', function(done) {
+  it('unknown', function(done) {
     pool({
       collection: 'mine',
       action: 'unknow'
