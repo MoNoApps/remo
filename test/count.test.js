@@ -10,7 +10,7 @@ describe('remo lib', function(){
       action: 'count'
     }, function(err, res){
       assert.equal(null, err);
-      assert.equal(1, res);
+      assert.equal(0, res);
 
       done();
     });

@@ -3,15 +3,14 @@ var pool = require('../api/pool');
 
 describe('remo lib', function(){
 
-  it('update', function(done) {
+  it('remove', function(done) {
     pool({
       collection: 'mine',
-      doc: { $set: { updatedAt: new Date().getTime()} },
-      action: 'update'
+      doc: {version: 1},
+      action: 'remove'
     }, function(err, res){
-      assert.ok(res);
       assert.equal(null, err);
-      assert.equal('{"ok":1,"nModified":0,"n":0}', res);
+      //assert.equal('{"ok":1,"n":1}', res);
 
       done();
     });
