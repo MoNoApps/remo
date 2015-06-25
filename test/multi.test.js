@@ -22,7 +22,7 @@ describe('remo lib', function(){
       doc: {module:'send'},
       action: 'multi'
     }, function(err, res){
-      assert.equal("multi update only works with $ operators", err.message);
+      assert.ok(err);
       assert.equal(null, res);
 
       done();

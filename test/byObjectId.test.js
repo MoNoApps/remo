@@ -10,7 +10,6 @@ describe('remo lib', function(){
     }, function(err, res){
       assert.equal(null, err);
       assert.equal(null, res);
-
       done();
     });
   });
@@ -21,8 +20,7 @@ describe('remo lib', function(){
       action: 'updateByObjectId'
     }, function(err, res){
       assert.equal(null, err);
-      assert.equal('{"ok":1,"nModified":0,"n":0}', res);
-
+      assert.ok(res);
       done();
     });
   });
@@ -33,8 +31,7 @@ describe('remo lib', function(){
       action: 'removeByObjectId'
     }, function(err, res){
       assert.equal(null, err);
-      assert.equal('{"ok":1,"n":0}', res);
-
+      assert.ok(res);
       done();
     });
   });
