@@ -12,17 +12,6 @@ cov:
 	mv api-orig api
 	genhtml reports/lcov.info --output-directory reports/
 
-test:
-	@./node_modules/.bin/mocha \
-		--reporter $(REPORTER) \
-		--slow 200ms \
-		--bail
-
-test-cov:
-	istanbul cover mocha -- \
-		--reporter $(REPORTER) \
-		test/
-
 clear:
 	rm -fr coverage
 	rm -fr reports
