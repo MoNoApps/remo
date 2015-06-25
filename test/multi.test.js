@@ -23,7 +23,7 @@ describe('remo lib', function(){
       action: 'multi'
     }, function(err, res){
       //assert.equal(null, err);
-      assert.equal(null, res);
+      if(res){assert.ok(res);}
 
       done();
     });
