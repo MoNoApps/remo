@@ -7,6 +7,9 @@ describe('remo lib', function(){
     pool({
       collection: 'mine',
       doc: {version: 1, module: 'send'},
+      limit: 1,
+      sort: {module: 1},
+      project: {_id: 1},
       action: 'find'
     }, function(err, res){
       assert.ok(res);
