@@ -1,7 +1,7 @@
 var remo = require('../index');
 var assert = require("assert");
 
-describe('remo lib', function(){
+describe('remo api', function(){
   it('find', function() { assert.ok(remo.find); });
   it('drop', function() { assert.ok(remo.drop); });
   it('multi', function() { assert.ok(remo.multi); });
