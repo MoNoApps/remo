@@ -3,14 +3,14 @@ var pool = require('../api/pool');
 
 describe('remo lib', function(){
 
-  it('count', function(done) {
+  it('upsert', function(done) {
     pool({
       collection: 'mine',
-      doc: {},
-      action: 'count'
+      doc: { $set: {module:'send'} },
+      action: 'upsert'
     }, function(err, res){
       assert.equal(null, err);
-      assert.equal(0, res);
+      assert.equal(1, res.result.ok);
 
       done();
     });
