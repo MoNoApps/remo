@@ -1,7 +1,7 @@
 var remo = require('../index');
 var assert = require("assert");
 
-describe('remo lib', function(){
+describe('remo api', function(){
   it('find', function() { assert.ok(remo.find); });
   it('drop', function() { assert.ok(remo.drop); });
   it('multi', function() { assert.ok(remo.multi); });
@@ -14,7 +14,7 @@ describe('remo lib', function(){
   it('closeDB', function() { assert.ok(remo.closeDB); });
   it('findOne', function() { assert.ok(remo.findOne); });
   it('dropIndex', function() { assert.ok(remo.dropIndex); });
-  it('creatIndex', function() { assert.ok(remo.createIndex); });
+  it('createIndex', function() { assert.ok(remo.createIndex); });
   it('dropDatabase', function() { assert.ok(remo.dropDatabase); });
   it('findByObjectId', function() { assert.ok(remo.findByObjectId); });
   it('updateByObjectId', function() { assert.ok(remo.updateByObjectId); });
