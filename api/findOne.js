@@ -1,7 +1,8 @@
 module.exports = function(db, message, cb) {
   var col = db.collection(message.collection);
-  col.findOne(message.query, message.project, message.options)
-     .toArray(function(err, results) {
-       cb(err, results);
-  });
+  col.findOne(message.query, message.project, message.options,
+    function(err, results) {
+      cb(err, results);
+    }
+  );
 };
