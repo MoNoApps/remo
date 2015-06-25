@@ -2,7 +2,9 @@
 Redis and Mongo for async tasks or slow servers.
 
 ## Metrics
-[![Code Climate](https://codeclimate.com/github/MoNoApps/remo/badges/gpa.svg)](https://codeclimate.com/github/MoNoApps/remo) [![Test Coverage](https://codeclimate.com/github/MoNoApps/remo/badges/coverage.svg)](https://codeclimate.com/github/MoNoApps/remo)
+[![Code Climate](https://codeclimate.com/github/MoNoApps/remo/badges/gpa.svg)](https://codeclimate.com/github/MoNoApps/remo)
+[![Test Coverage](https://codeclimate.com/github/MoNoApps/remo/badges/coverage.svg)](https://codeclimate.com/github/MoNoApps/remo)
+[![Circle CI](https://circleci.com/gh/MoNoApps/remo.svg?style=svg)](https://circleci.com/gh/monoapps/remo)
 
 ## Queue Query List
 Create a list on memory, save on disk.
@@ -146,4 +148,3 @@ npm install gulp-jshint
 
 gulp
 ````
-
