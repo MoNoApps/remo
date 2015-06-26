@@ -27,5 +27,7 @@ remo.upsert = require('./api/upsert');
 //--- helpers ---//
 remo.merge = require('./api/merge');
 remo.parseOId = require('./api/parseOId');
+//--- db pool connection ---//
+remo.pool = require('./api/pool');
 
 module.exports = remo;
