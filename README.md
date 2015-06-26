@@ -7,12 +7,13 @@ Save data from memory to disk for async/background/slow tasks.
 [![Circle CI](https://circleci.com/gh/MoNoApps/remo.svg?style=svg)](https://circleci.com/gh/monoapps/remo)
 
 ## Standalone ReMo
-Message must contain the 'action'. See [attempt actions](lib/attempt.js).
+How to use the package? See this [implementation](https://github.com/MoNoApps/barco).
 ````js
 var remo = require('remo');
-var message = {collection: 'mine',doc: {qty: 1},action: 'inc'};
-remo.pool(message, function(err, res){ /* stuff here*/ });
+var message = { .... };
+remo.pool(message, function(){ ... });
 ````
+Message must contain the 'action'. See [attempt actions](lib/attempt.js).
 
 ## ReMo
 Configure your queues and defaults:
