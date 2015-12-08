@@ -1,6 +1,6 @@
 var remo = require('../index');
 
-var attempt = function(db, m, cb) {
+var attempt = function (db, m, cb) {
   switch(m.action) {
     case 'set':
     case 'inc':

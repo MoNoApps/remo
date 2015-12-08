@@ -1,4 +1,5 @@
-var remo = {};
+(function(remo){
+
 //--- common functions ---//
 remo.find = require('./api/find');
 remo.drop = require('./api/drop');
@@ -29,5 +30,6 @@ remo.merge = require('./api/merge');
 remo.parseOId = require('./api/parseOId');
 //--- db pool connection ---//
 remo.pool = require('./api/pool');
+remo.attempt = require('./api/attempt');
 
-module.exports = remo;
+})(module.exports);

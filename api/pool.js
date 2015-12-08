@@ -1,15 +1,22 @@
+(function () {
+
 var remo = require('../index');
-var merge = require('../api/merge');
 var conf = require('../conf.json');
-var attempt = require('../lib/attempt');
-var connect = require('../api/connect');
 
-module.exports = function(message, cb){
-  connect(conf.defaults, function(err, db) {
+function pool (message, cb) {
+  message = remo.merge(conf.defaults, message);
+  remo.connect(message, onConnect);
+
+  function onAttempt (err, res) {
+    cb(err, res);
+  }
+
+  function onConnect (err, db) {
     conf.defaults.db = conf.defaults.db || db;
+    remo.attempt(db, remo.merge(conf.defaults, message), onAttempt);
+  }
+}
 
-    attempt(db, merge(conf.defaults, message), function(err, res) {
-      cb(err, res);
-    });
-  });
-};
+module.exports = pool;
+
+})();

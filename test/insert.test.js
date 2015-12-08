@@ -9,7 +9,8 @@ describe('remo lib', function(){
       doc: {version: 1, module: 'send'},
       action: 'insert'
     }, function(err, res){
-      assert.equal('{"ok":1,"n":1}', res);
+      assert.equal(res.result.ok, 1);
+      assert.equal(res.result.n, 1);
 
       done();
     });
