@@ -44,10 +44,10 @@ pub.rpush(['db:mongo:input', JSON.stringify(message)], function(){});
 ## Code Quality
 
 ````sh
-# gulp and jshint
-npm install gulp gulp-jshint -g; gulp;
-# mocha for tests
-npm install mocha -g; mocha;
-# coverage
+apt-get install lcov
+npm install gulp mocha istanbul mocha-istanbul -g
+npm install gulp-jshint
+gulp
+mocha
 make cov
 ````
