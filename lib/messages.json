@@ -1,0 +1,10 @@
+{
+  "ERR001": "Missing db.",
+  "ERR002": "Missing com object.",
+  "ERR003": "Missing db url.",
+  "ERR004": "",
+  "ERR005": "Missing next function.",
+  "ERR006": "Params is not an object.",
+  "ERR007": "Next is not an function.",
+  "WARN001": "WARN: Missing params. Default params will be used."
+}
