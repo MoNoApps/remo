@@ -1,41 +1,53 @@
-var assert = require("assert");
-var connect = require('../api/connect');
-var closeDB = require('../api/closeDB');
-var conf = require('../conf.json');
+const assert = require('assert');
+const Remo = require('../remo');
+const messages = require('../lib/messages.json');
+const config = require('../config.json');
 
-describe('remo lib', function(){
+describe('remo api', () => {
 
-  it('connect array param', function(done) {
-    connect([], function(err) {
-      assert.ok(err);
+  it('connect array param', (done) => {
+    const remo = new Remo();
+    remo.connect([], (res) => {
+      assert.equal(res.error, undefined);
+      assert.equal(remo.status, config.status.CONNECTED);
       done();
     });
   });
 
-  it('connect object param', function(done) {
-    connect({}, function(err) {
-      assert.ok(err);
+  it('connect object param', (done) => {
+    const remo = new Remo();
+    remo.connect({}, (res) => {
+      assert.equal(res.error, undefined);
+      assert.equal(remo.status, config.status.CONNECTED);
       done();
     });
   });
 
-  it('connect boolean param', function(done) {
-    connect(false, function(err) {
-      assert.ok(err);
+  it('connect boolean=false', (done) => {
+    const remo = new Remo();
+    remo.connect(false, (res) => {
+      assert.equal(res.error, null);
+      assert.equal(remo.messages.length, 1);
+      assert.equal(remo.messages[0], messages.WARN001);
+      assert.equal(remo.status, config.status.CONNECTED);
       done();
     });
   });
 
-  it('connect boolean param', function(done) {
-    connect(true, function(err) {
-      assert.ok(err);
+  it('connect boolean=true', (done) => {
+    const remo = new Remo();
+    remo.connect(true, (res) => {
+      assert.equal(res.error, undefined);
+      assert.equal(remo.status, config.status.CONNECTED);
       done();
     });
   });
 
-  it('connect fake object', function(done) {
-    connect({db: {}}, function(err) {
-      assert.equal(false,err);
+  it('connect fake object', (done) => {
+    const remo = new Remo();
+    remo.connect({ db: {} }, (res) => {
+      assert.equal(res.error, undefined);
+      assert.equal(remo.status, config.status.CONNECTED);
       done();
     });
   });
