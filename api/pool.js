@@ -1,7 +1,7 @@
 (function () {
 
 var remo = require('../index');
-var conf = require('../conf.json');
+var conf = require('../config.json');
 
 function pool (message, cb) {
   message = remo.merge(conf.defaults, message);

@@ -1,7 +1,7 @@
 var assert = require("assert");
 var connect = require('../api/connect');
 var closeDB = require('../api/closeDB');
-var conf = require('../conf.json');
+var conf = require('../config.json');
 
 describe('remo lib', function(){
 

@@ -1,5 +1,5 @@
 var redis = require('redis');
-var conf = require('../conf.json');
+var conf = require('../config.json');
 var pub = redis.createClient();
 
 module.exports = function(message, cb) {

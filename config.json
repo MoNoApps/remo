@@ -21,5 +21,10 @@
     "options": {"w": 1},
     "collection": "remo",
     "url": "mongodb://127.0.0.1/remo"
+  },
+  "status": {
+    "CLOSED": 0,
+    "CONNECTED": 1,
+    "INACTIVE": 2
   }
 }
